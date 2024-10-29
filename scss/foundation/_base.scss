@@ -1,0 +1,136 @@
+@use"../foundation/variables";
+@use"../foundation/mixin";
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    min-width: 350px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: "Roboto", "M PLUS 1",  sans-serif;
+    font-size: 1.6rem;
+    background: variables.$color--white;
+    color: variables.$color--font;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+@include mixin.breakpoint(pc){
+    body{
+        display: grid;
+        grid-template:
+        "header aside" 216px
+        "main aside" 
+        "footer footer" ;
+        grid-template-columns: 2.8fr 1.2fr;
+        // overflow-x: scroll;
+    }
+
+    .l-header{
+        grid-area: header;
+    }
+
+    .l-main{
+        grid-area: main;
+    }
+
+    .l-side{
+        grid-area: aside;
+        min-width: 280px;
+    }
+    
+    .l-footer{
+        grid-area: footer;
+    } 
+
+} 
+
+@include mixin.breakpoint(full){
+    body{
+        grid-template-columns: 1fr 378px;
+    }
+}
+
+img{
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+h1,h2,h3,h4,h5,h6,p,figure{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+}
+
+h1{
+    font-size: 3.6rem;
+    word-wrap: break-word;
+
+    @include mixin.breakpoint(pc){
+        font-size: 6.0rem;
+    }
+}
+
+h2{
+    font-size: 2.8rem;
+    
+    @include mixin.breakpoint(pc){
+        font-size: 3.6rem;
+    }
+}
+
+h3{
+    font-size: 2.4rem;
+}
+
+h4, h5, h6{
+    font-size: 2.0rem;
+}
+
+
+ul,ol{
+    list-style-type: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+    
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+blockquote{
+    padding: 30px 20px;
+
+    @include mixin.breakpoint(tablet){
+        padding: 50px;
+    }
+
+}
+
+cite a{
+    text-decoration: underline;
+    color: variables.$color--link;
+    margin-left: 1rem;
+    margin-top: 60px;
+}
+
+small{
+    font-size: 1.4rem;
+}
+
+
+
+
+
+

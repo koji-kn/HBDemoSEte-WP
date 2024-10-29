@@ -1,0 +1,117 @@
+@use"../../foundation/variables";
+@use"../../foundation/mixin";
+
+.p-home{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    @include mixin.breakpoint(tablet){
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 800px;
+        column-gap: 4%;
+        margin: 40px auto;
+    }
+
+    @include mixin.breakpoint(full){
+        max-width: 1320px;
+        margin: 100px auto;
+        column-gap: 5.2%;
+    }
+  
+    &__typography{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 643px;
+        padding: 16px;
+        overflow-wrap: anywhere;
+
+        @include mixin.breakpoint(tablet){
+            // max-width: 375px;
+            min-height: 680px;
+        }
+        
+        @include mixin.breakpoint(full){
+            max-width: 616px;
+            min-height: 1197px;
+        }
+        
+        &:hover{
+            opacity: 0.7;
+        }
+        
+        &:hover img{
+            transition: transform 0.5s ease;
+            transform: scale(1.1);
+        }
+        
+    }
+    
+    &__title{
+        font-size: 4.1rem;
+        padding-bottom: 80px;
+        margin-bottom: auto;
+
+        @include mixin.breakpoint(pc){
+            font-size: 4.3vw;
+        }
+        
+        @include mixin.breakpoint(full){
+            font-size: clamp(4.1rem, 6.0vw, 8.0rem);
+        }
+        
+        &::after{
+            width: 36px;
+            height: 5px;
+            top: 80px;
+            left: 6px;
+            
+            @include mixin.breakpoint(full){
+                width: 63px;
+                top: 160px;
+                left: 7px;
+            }
+        }
+        
+    }
+
+    &__detail{
+        font-family: "M PLUS 1";
+        padding: 6px 16px 21px 16px;
+        background: rgba($color: #fff, $alpha: 0.8);
+        // flex-grow: 1;
+        
+        h3{
+            font-size: 2.4rem;
+            margin-bottom: 6px;
+        }
+        
+        p{
+            color: variables.$color--font;
+            font-weight: bold;
+            font-size: 1.4rem;
+            
+            @include mixin.breakpoint(full){
+                font-size: 1.6rem;
+            }
+        } 
+
+        &--wrap{
+            display: flex;
+            flex-direction: column;
+            row-gap: 16px;
+        }
+
+    }
+}
+
+.detail-t{
+    flex-grow: 1;
+}
+
+
+
+

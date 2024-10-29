@@ -1,0 +1,13 @@
+.c-typography{
+    position: relative;
+    overflow: hidden;
+     
+    &__img{
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        object-fit: cover;
+    }
+}

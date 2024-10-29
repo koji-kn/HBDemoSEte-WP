@@ -1,0 +1,154 @@
+@use"../../foundation/variables";
+@use"../../foundation/mixin";
+
+.p-archive{
+    
+    @include mixin.breakpoint(tablet){
+        margin: 7px auto 0;   
+    }
+    
+    @include mixin.breakpoint(pc){
+        margin: 32px auto;
+    }
+
+    &__intro{
+        margin-bottom: 30px;
+
+        @include mixin.breakpoint(pc){
+            margin-bottom: 70px;
+        }
+
+        h2{
+            margin: 12px 0;
+
+            @include mixin.breakpoint(pc){
+                margin-bottom: 20px;
+            }
+        }
+
+        p{
+            margin: 12px 0;
+        }
+    }
+    
+    &__card{
+        flex-direction: column;
+        color: variables.$color--white;
+        margin-bottom: 30px;
+
+        @include mixin.breakpoint(tablet){
+            flex-direction: row;
+            min-height: 355px;
+            height: max-content;
+        }
+
+        @include mixin.breakpoint(full){
+            min-height: 470px;
+        }
+
+        &--contents{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: variables.$color--contents;
+            box-sizing: border-box;
+            padding: 32px 17px;
+            flex-basis: calc(100% - 34px);
+
+            @include mixin.breakpoint(tablet){
+                max-width: 50%;
+            }
+
+            @include mixin.breakpoint(full){
+                padding-top: 55px;
+                padding-bottom: 60px;
+                padding-left: clamp(20px, 3.3vw, 60px);
+                padding-right: clamp(20px, 3.6vw, 60px);
+                flex-basis: calc(100% - 120px);
+            }
+
+            h3{
+                font-size: 2.0rem;
+                margin-bottom: 21px;
+                overflow-wrap: break-spaces;
+                text-overflow: ellipsis;
+                
+                @include mixin.breakpoint(pc){
+                    font-size: clamp(20px, 1.8vw, 36px);
+                    // margin-bottom: 44px;
+                }
+            }
+            
+            
+        }
+        
+
+        &--info 
+        
+            .wp-block-heading{
+                font-size: 1.6rem;
+                margin-bottom: 7px;
+
+                @include mixin.breakpoint(pc){
+                    font-size: clamp(16px, 1.4vw, 28px);
+                    margin-bottom: 13px;
+                }
+            }
+        
+            p{
+                // display: -webkit-box;
+                // -webkit-line-clamp: 4;
+                // -webkit-box-orient: vertical;
+                // overflow: hidden;
+
+                // @include mixin.breakpoint(full){
+                //     padding-right: 40px;
+                // }
+
+            }
+
+            span{
+                display: none;
+            }
+
+        &--img{
+            height: 230px;
+            
+            @include mixin.breakpoint(tablet){
+                height: auto;
+                flex-basis: 100%;
+            }
+            
+            img{
+                object-position: left;
+                aspect-ratio: 4/3;
+            }
+            
+        }
+
+        &--detail{
+            display: block;
+            width: 163px;
+            height: 42px;
+            margin: 30px auto 10px;
+            background: #fff;
+            font-weight: 700;
+            text-align: center;
+            line-height: 42px;
+            color: variables.$color--font;
+            border-radius: 50px;
+
+            @include mixin.breakpoint(full){
+                width: 292px;
+                height: 76px;
+                line-height: 76px;
+                margin-bottom: 0;
+            }
+           
+            a{
+                padding: 11px 41px;
+            }
+        }
+    }
+
+}

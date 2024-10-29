@@ -1,0 +1,51 @@
+@use"../foundation/variables";
+@use"../foundation/mixin";
+
+.l-footer{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 150px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 1.8rem;
+    line-height: 22px;
+    text-align: center;
+    color: variables.$color--white;
+    background: variables.$color--footer;
+    position: relative;
+
+    @include mixin.breakpoint(tablet){
+        padding-top: 30px;
+        padding-bottom: 24px;
+    }
+
+    @include mixin.breakpoint(pc){
+        padding-top: 41px;
+        padding-bottom: 27px;
+    }
+
+    &__menu{
+
+        li{
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 10px;
+            box-sizing: border-box;
+
+            &:last-child{
+                border-left: 2px solid #fff;
+            }
+
+            &:hover{
+                font-weight: bold;
+            }
+        }
+
+    }
+}
+
+// .copyright{
+//     position: absolute;
+//     bottom: 0;
+// }
