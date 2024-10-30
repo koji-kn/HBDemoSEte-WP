@@ -38,12 +38,12 @@
 
         @include mixin.breakpoint(tablet){
             flex-direction: row;
-            min-height: 355px;
+            height: 355px;
             height: max-content;
         }
 
         @include mixin.breakpoint(full){
-            min-height: 470px;
+            height: 470px;
         }
 
         &--contents{
@@ -121,7 +121,7 @@
             
             img{
                 object-position: left;
-                aspect-ratio: 4/3;
+                aspect-ratio: 1/1;
             }
             
         }

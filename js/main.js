@@ -80,12 +80,20 @@
     });
 
     
-
+    //matchHeight
     $(function() {
         $('.detail-u').matchHeight();
         $('.detail-d').matchHeight();
         $('.p-home__detail--wrap').matchHeight();
     });
-  
+
+
+    //タイトルの高さ（文字数が多い）時にフォントサイズ変更
+    const title = document.querySelector('.p-mainvisual__title');
+    const titleHeight = title.clientHeight;
+    
+    if(titleHeight > 200){
+        title.classList.add('refont');
+    }
   
 }
