@@ -6,13 +6,13 @@
             while( have_posts() ) :
                 the_post(); ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <section class="p-single">
             <div class="p-mainvisual p-single__mainvisual">
                 <div class="p-mainvisual__mask"></div>
                 <img class="p-mainvisual__img inview" src="<?php the_post_thumbnail_url(); ?>">
                 <h1 class="p-mainvisual__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
             </div> 
-
+        <section class="p-single">
+            
             <?php the_content(); ?>
 
             <!-- ページ分割 -->

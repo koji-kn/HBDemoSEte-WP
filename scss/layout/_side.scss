@@ -3,6 +3,10 @@
 
 .l-side{
     background: variables.$color--aside;
+    
+    @include mixin.breakpoint(pc){
+        min-height: calc( 100vh - 150px);
+    }
 
     &__title{
         font-size: 0;

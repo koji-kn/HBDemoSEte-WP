@@ -3,6 +3,7 @@
 
 .l-main{
     width: 100%;
+    min-height: calc(100vh - 350px);;
 
     &__title{
         color: variables.$color--white;
@@ -25,4 +26,28 @@ section{
         width: 95%;
         max-width: 1353px;
     }
+}
+
+.page-error{
+    a{
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+    a:hover{
+        font-weight: bold;
+    }
+
+    p{
+        padding: 20px 30px;
+
+        @include mixin.breakpoint(full){
+            padding: 60px 120px;
+            font-size: 2.0rem;
+        }
+    }
+}
+
+.home-link{
+    text-align: center;
 }

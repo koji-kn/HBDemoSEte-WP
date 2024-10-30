@@ -25,6 +25,7 @@ function custom_theme_support() {
     register_nav_menus( 
         array(
             'gloval-nav' => ( 'サイド表示メニュー' ),
+            '404-nav'    => ( '404表示メニュー' ),
             'footer-nav' => ( 'フッター表示メニュー' )   
             )    
         );
